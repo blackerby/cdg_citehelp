@@ -35,7 +35,7 @@ if uploaded_file is not None:
     st.subheader("Legislation form search string:")
     st.write(search_string)
     st.write(
-        "Paste the string above into the `Legislation and Law Numbers` field on the [Congress.gov](https://www.congress.gov/) legislation search form. **Be sure to select `93-119 (1973-2026)` in the `Congress (Years) field!**"
+        "Paste the string above into the `Legislation and Law Numbers` field on the [Congress.gov](https://www.congress.gov/) legislation search form. **Be sure to select `93-119 (1973-2026)` in the `Congress (Years) field`!**"
     )
 else:
     st.info("Please upload a CSV file")
