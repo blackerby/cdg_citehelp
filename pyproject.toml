@@ -1,0 +1,12 @@
+[project]
+name = "citehelp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "polars>=1.37.1",
+    "pycapitol>=0.1.2",
+    "ruff>=0.14.13",
+    "streamlit>=1.53.0",
+]
