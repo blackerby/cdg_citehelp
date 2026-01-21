@@ -21,9 +21,15 @@ uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"], key="lt")
 
 if uploaded_file is not None:
     df = pl.read_csv(uploaded_file, skip_lines=3)
+    is_numeric = df["Congress"].dtype.is_numeric()
+    congress = (
+        pl.col("Congress")
+        if is_numeric
+        else pl.col("Congress").str.extract(r"^(\d+)", 1)
+    )
     df_with_cite = df.with_columns(
         (
-            pl.col("Congress").cast(pl.String)
+            congress.cast(pl.String)
             + pl.col("Legislation Number").map_elements(
                 normalize_citation, return_dtype=pl.String
             )
